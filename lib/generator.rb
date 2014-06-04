@@ -14,7 +14,7 @@ class Generator
   end
 
   def companies
-    (@length / 2).times.map do
+    ((@length / 2)+1).times.map do
       Faker::Company.name
     end
   end

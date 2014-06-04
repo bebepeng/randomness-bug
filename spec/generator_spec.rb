@@ -10,6 +10,10 @@ describe Generator do
   end
   it 'returns an array with unique companies that have two employees' do
     all_companies = Generator.new(4).generate.map {|item| item[2]}
-    expect(all_companies.uniq.length).to eq (all_companies.length/2)
+    expect(all_companies.uniq.length).to eq 2
+  end
+  it 'gives a company for an odd number of outputs' do
+    all_companies = Generator.new(3).generate.map {|item| item[2]}
+    expect(all_companies.uniq.length).to eq 2
   end
 end
