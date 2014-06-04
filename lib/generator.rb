@@ -20,12 +20,12 @@ class Generator
   end
 
   def generate
+    comp = companies
     i = 0
     people.map do |person|
-      result = (person << companies[i])
+      with_company = person << comp[(i/2)]
       i += 1
-      i = 0 if i == (@length / 2)
-      result
+      with_company
     end
   end
 
